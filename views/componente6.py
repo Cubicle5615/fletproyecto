@@ -1,7 +1,6 @@
 from flet import *
 from models.Mapa.Mapa import Mapa
 
-
 class Componente6(UserControl):
     def __init__(self, page):
         super().__init__(page)
@@ -67,6 +66,8 @@ class Componente6(UserControl):
             self.update()
 
     def llenarPersonajes(self):
+        if self.personajes_cards.controls:
+            self.personajes_cards.controls.clear()
         for mapa in self.mapa:
             self.personajes_cards.controls.append(
                 Container(
